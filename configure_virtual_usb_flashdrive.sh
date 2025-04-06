@@ -68,10 +68,10 @@ do
 done
 
 # Define Drive String (SLOW)
-# drive_str="-drive file=${diskimage},if=none,id=drive-usb0,format=raw,cache=none -device usb-storage,id=drive-usb0,drive=drive-usb0,removable=on,bootindex=0"
+# drive_str="-drive file=${diskimage},if=none,id=drive-usb0,format=raw,cache=none -device usb-storage,id=drive-usb0,drive=drive-usb0,removable=on,serial=0123456789,bootindex=0"
 
 # Define Drive String (FAST)
-drive_str="-drive file=${diskimage},if=none,id=drive-usb0,format=raw,cache=none -device nec-usb-xhci,id=xhci -device usb-storage,bus=xhci.0,drive=drive-usb0,removable=on,bootindex=0"
+drive_str="-drive file=${diskimage},if=none,id=drive-usb0,format=raw,cache=none -device nec-usb-xhci,id=xhci -device usb-storage,bus=xhci.0,drive=drive-usb0,removable=on,serial=0123456789,bootindex=0"
 
 if [[ "${action}" == "attach" ]]
 then
