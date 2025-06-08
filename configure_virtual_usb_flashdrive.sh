@@ -146,6 +146,9 @@ then
         # Replace existing args String
         cleaned_args=$(echo "${existing_args}" | sed -E "s|${drive_str}||g")
 
+        # Remove args: in front
+        cleaned_args=$(echo "${cleaned_args}" | sed -E "s|args:(.*)|\1|")
+
         # Echo
         echo "USB Device is currently Attached to the Virtual Machine"
 
